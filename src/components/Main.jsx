@@ -4,8 +4,6 @@ useState
 
 export default function Main() {
 
-    const [active, setActive] = useState(1)
-
     const languages = [
   {
     id: 1,
@@ -39,19 +37,11 @@ export default function Main() {
   }
 ];
 
-    function handleClick(id) {
-        if (active === id) {
-            setActive(0)
-        } else {
-            setActive(id)
-        }
-    }
-
-    function onClick() {
-        className.list.add("active")
-    }
-    
-
+ const [showMore, setShowMore] = useState(false);
+ 
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
     return(
         <>
         <div className="container d-flex p-3">
@@ -59,8 +49,11 @@ export default function Main() {
         {
             languages.map((item) => (
                  <li className="nav-item" key={item.id} >
-                 <button onClick={() => setActive(item.id)} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
-                 <p>{item.description}</p>
+                 <button onClick={handleMoreClick} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
+                 <div className="card">
+                 <h3>{item.title}</h3>
+                  {showMore && <p>{item.description}</p>}
+                 </div>
                 </li>
             ))
         }

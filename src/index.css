@@ -4,13 +4,6 @@
   margin: 0;
 }
 
-p {
+.card {
   display: none;
-}
-
-button.active{
-  p {
-    display: block;
-
-  }
 }

@@ -45,10 +45,10 @@ export default function Main() {
     return(
         <>
         <div className="container d-flex p-3">
-            <ul className="nav nav-tabs"></ul>
+            <ul className="nav nav-tabs "></ul>
         {
             languages.map((item) => (
-                 <li className="nav-item" key={item.id} >
+                 <li className="nav-item list-unstyled" key={item.id} >
                  <button onClick={handleMoreClick} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
                  
                   {showMore && <div className="card">

@@ -61,7 +61,7 @@ export default function Main() {
         <div>
         {
             languages.map((item) =>(
-                   showMore === item.id && <div className="container">
+                   showMore === item.id && <div className="container card">
                  <h3>{item.title}</h3><p>{item.description}</p> </div>
                  
             ))

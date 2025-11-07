@@ -4,20 +4,15 @@
   margin: 0;
 }
 
-.card {
-  display: none;
-}
-
 ul {
   list-style: none;
 }
 
 .btn {
   margin: 1rem;
-  width: 80px;
+  width: 90px;
 }
 
 .card {
-  padding-top: 2rem;
-  border-color: white;
+  padding-top: 1rem;
 }

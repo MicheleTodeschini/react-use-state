@@ -1,4 +1,10 @@
+import { useState } from "react";
+
+useState
+
 export default function Main() {
+
+    const [active, setActive] = useState(1)
 
     const languages = [
   {
@@ -33,15 +39,27 @@ export default function Main() {
   }
 ];
 
+    function handleClick(id) {
+        if (active === id) {
+            setActive(0)
+        } else {
+            setActive(id)
+        }
+    }
+
+    function onClick() {
+        className.list.add("active")
+    }
+    
 
     return(
         <>
         <div className="container d-flex p-3">
-            <ul class="nav nav-tabs"></ul>
+            <ul className="nav nav-tabs"></ul>
         {
             languages.map((item) => (
-                 <li class="nav-item">
-                 <a class="nav-link active" aria-current="page" href="#">{item.title}</a>
+                 <li className="nav-item" key={item.id} >
+                 <button onClick={() => setActive(item.id)} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
                  <p>{item.description}</p>
                 </li>
             ))

@@ -1,5 +1,16 @@
-@import url('bootstrap');
+@import url(bootstrap);
 
 * {
   margin: 0;
+}
+
+p {
+  display: none;
+}
+
+button.active{
+  p {
+    display: block;
+
+  }
 }

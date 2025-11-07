@@ -11,3 +11,8 @@
 ul {
   list-style: none;
 }
+
+.btn {
+  margin: 1rem;
+  width: 80px;
+}

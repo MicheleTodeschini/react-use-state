@@ -50,10 +50,10 @@ export default function Main() {
             languages.map((item) => (
                  <li className="nav-item" key={item.id} >
                  <button onClick={handleMoreClick} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
-                 <div className="card">
-                 <h3>{item.title}</h3>
-                  {showMore && <p>{item.description}</p>}
-                 </div>
+                 
+                  {showMore && <div className="card">
+                 <h3>{item.title}</h3><p>{item.description}</p> </div>}
+                 
                 </li>
             ))
         }

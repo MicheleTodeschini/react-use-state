@@ -37,10 +37,12 @@ export default function Main() {
   }
 ];
 
- const [showMore, setShowMore] = useState(null);
- 
+ const [showMore, setShowMore] = useState(0);
+
   function handleMoreClick(id) {
-    setShowMore(showMore === id ? null : id);
+    setShowMore(id)
+    console.log(id);
+    
   }
     return(
         <>
@@ -49,7 +51,7 @@ export default function Main() {
         {
             languages.map((item) => (
                  <li className="nav-item list-unstyled" key={item.id} >
-                 <button onClick={handleMoreClick(item.id)} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
+                 <button onClick={() => {handleMoreClick(item.id)}} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
                  
                   {showMore === item.id && <div className="card">
                  <h3>{item.title}</h3><p>{item.description}</p> </div>}

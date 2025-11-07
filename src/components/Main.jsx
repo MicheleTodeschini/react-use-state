@@ -53,13 +53,21 @@ export default function Main() {
                  <li className="nav-item list-unstyled" key={item.id} >
                  <button onClick={() => {handleMoreClick(item.id)}} className="btn btn-primary" aria-current="page" href="#">{item.title}</button>
                  
-                  {showMore === item.id && <div className="card">
-                 <h3>{item.title}</h3><p>{item.description}</p> </div>}
-                 
+               
                 </li>
+            ))
+        },
+        </div>
+        <div>
+        {
+            languages.map((item) =>(
+                   showMore === item.id && <div className="container">
+                 <h3>{item.title}</h3><p>{item.description}</p> </div>
+                 
             ))
         }
         </div>
+        
         </>
     )
 }
